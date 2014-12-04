@@ -1,17 +1,39 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="en-US" ng-app="todoApp">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Title</title>
+  <title>The Ultimate To Do List</title>
 </head>
 <body>
 
-  <div class="container">
-    <h1>My Site Title</h1>
-  </div>
-
+  <div class="container" ng-controller="TodoController as todoCtrl">
+		<h1>The Ultimate To Do List</h1>
+		<form>
+			<label>Name</label><input type="text" ng-model="todoCtrl.newTask.name">
+			<label>Description</label><input type="text" ng-model="todoCtrl.newTask.desc">
+			<label>Due Date</label><input type="date" ng-model="todoCtrl.newTask.due">
+			<button ng-click="todoCtrl.tasks.push(todoCtrl.newTask)">AddTask</button>
+		</form>
+		<table>
+			<thead>
+				<tr>
+					<th>TaskName</th>
+					<th>Task Description</th>
+					<th>Task Due Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="task in todoCtrl.tasks">
+					<td>{{task.name}}</td>
+					<td>{{task.desc}}</td>
+					<td>{{task.due}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="bower_components/angular/angular.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
