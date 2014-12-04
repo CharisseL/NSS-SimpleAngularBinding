@@ -20,8 +20,17 @@ angular.module('todoApp', [])
 				desc: ' make $$$',
 				due: 'Tomorrow'
 			}
-	]
+	];
+	
+		vm.addNewTask = function(){
+		vm.tasks.push(vm.newTask);
+		vm.newTask = null;
+		};
 
-});
+		vm.removeTodo = function(todo){
+			var index = vm.tasks.indexOf(todo);
+			vm.tasks.splice(index,1);
+		}
+	});
 
 }());

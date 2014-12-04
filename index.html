@@ -29,6 +29,7 @@
 					<td>{{task.name}}</td>
 					<td>{{task.desc}}</td>
 					<td>{{task.due}}</td>
+					<td><button ng-click="todoCtrl.removeTodo(task)">Delete</button></td>
 				</tr>
 			</tbody>
 		</table>
