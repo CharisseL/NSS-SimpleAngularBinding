@@ -1,0 +1,24 @@
+<table>
+	<thead>
+		<tr>
+			<th>TaskName</th>
+			<th>Task Description</th>
+			<th>Task Due Date</th>
+			<th>Priority</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="(taskId, task) in todoCtrl.tasks">
+					<td><img class="todo-img" ng-src="{{task.image}}"></td>
+					<td>{{task.name}}</td>
+					<td>{{task.desc}}</td>
+					<td>{{task.due | date}}</td>
+					<td>{{task.priority}}</td>
+					<td>
+						<a class="btn btn-primary" href="/#/{{taskId}}">Show</a>
+						<button ng-click="todoCtrl.removeTodo(taskId)">Delete</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>

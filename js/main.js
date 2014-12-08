@@ -4,11 +4,29 @@
 	angular.module('todoApp', ['ngRoute'])
 		.config(function($routeProvider){
 			$routeProvider
-				.when('/', {})
-				.otherwise({
-					redirectTo: '/'
+				.when('/', {
+					templateUrl: 'views/table.html'
+					controller: 'TodoController',
+					controllerAs: 'todoCtrl'
 				})
+				.when('/new', {
+					templateUrl: 'views/form.html',
+					controller: 'TodoController',
+					controllerAs: 'todoCtrl'
+				})
+				.when('/:id', {
+					templateUrl: 'views/form.html',
+					controller: 'ShowController',
+					controllerAs: 'showCtrl'
+				})
+				.otherwise({redirectTo: '/'});
 		})
+	.controller('ShowController', function($http, $routeParams){
+		var id = $routeParams.id
+		$http.get('https://omgttt.firebaseio.com
+
+
+
 
 	.controller('TodoController', function(){
 		var vm = this;
