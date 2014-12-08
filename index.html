@@ -5,17 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Ultimate To Do List</title>
-	<-- <link rel="stylesheet" type="text/css" href="styles/main.css"> 
+	<link rel="stylesheet" type="text/css" href="styles/main.css"> 
 	<link rel= "stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
   <div class="container" ng-controller="TodoController as todoCtrl">
 		<h1>The Ultimate To Do List</h1>
 		<form name="myForm" ng-submit="myForm.$valid && todoCtrl.addNewTask()" novalidate>
-			<label>Name</label>
-			<input type="text" ng-model="todoCtrl.newTask.name" required>
+			<div class="form-group">
+				<label class="control-label">Name</label>
+				<input type="text" ng-model="todoCtrl.newTask.name" required>
+		  </div>
 			<label>Description</label>
-			<input type="text" ng-model="todoCtrl.newTask.desc" required>
+			<input class="form-control" type="text" ng-model="todoCtrl.newTask.desc" required>
 			<label>Due Date</label>
 			<input type="date" ng-model="todoCtrl.newTask.due" required>
 			<input type="submit" value="Add Task" ng-show="myForm.$valid">
@@ -41,6 +43,7 @@
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

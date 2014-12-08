@@ -1,24 +1,35 @@
 ;(function(){
   'use strict';
 
-angular.module('todoApp', [])
+	angular.module('todoApp', ['ngRoute'])
+		.config(function($routeProvider){
+			$routeProvider
+				.when('/', {})
+				.otherwise({
+					redirectTo: '/'
+				})
+		})
+
 	.controller('TodoController', function(){
 		var vm = this;
 		vm.tasks = [
 			{
 				name: 'Learn Angular',
 				desc: 'If I learn this, I make $$$',
-				due: 'Today'
+				due: 'Today',
+				image:
 			},
 			{
 				name: 'Finish Tic Tac Toe',
 				desc: 'Grrrrrrrrrrrr',
-				due: 'Monday'
+				due: 'Monday',
+				image:
 			},
 			{
 				name: 'Get a job',
 				desc: ' make $$$',
-				due: 'Tomorrow'
+				due: 'Tomorrow',
+				image:
 			}
 	];
 	
